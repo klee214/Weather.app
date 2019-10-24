@@ -10,8 +10,8 @@ const forecast = (lat, long, callback)=>{
         }else if(body.error){
             callback("wrong lat and long!" + error,undefined)
         }else{
-            callback(undefined,data.daily.data[0].summary + " It is currently " + data.currently.temperature + " degrees out. There is a " 
-                     + data.currently.precipProbability + "% chance of rain.")
+            callback(undefined,data.daily.data[0].summary + " It is currently " + data.currently.temperature + "`C degrees out. There is a " 
+                     + data.currently.precipProbability + "% chance of rain. The highest temperature is " + data.daily.data[0].temperatureHigh + "`C. The lowest temperature is " + data.daily.data[0].temperatureLow + "`C." )
         }
     })   
 }
